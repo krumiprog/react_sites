@@ -1,0 +1,166 @@
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-image: linear-gradient(
+    to left,
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72,
+    #a8eb12
+  );
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    max-width: 1500px;
+  }
+
+  &__logo {
+    color: #fff;
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.fa-frog {
+  margin-left: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 60vw;
+  justify-content: end;
+  margin-right: 2rem;
+
+  &__item {
+    height: 80px;
+  }
+
+  &__link {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+
+    &:hover {
+      border-bottom: 4px solid #fff;
+      transition: all 0.2s ease-out;
+    }
+
+    &-mobile {
+      display: none;
+    }
+  }
+}
+
+.fa-bars {
+  color: #fff;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 90vh;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+
+    &.active {
+      background: #051937;
+      left: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 1;
+    }
+
+    &__link {
+      padding: 2rem 0;
+      width: 100%;
+      display: table;
+
+      &:hover {
+        background-color: #fff;
+        color: #051937;
+        border-radius: 0;
+      }
+    }
+
+    &__link-mobile {
+      display: block;
+      text-align: center;
+      margin: 2rem auto;
+      border-radius: 99px;
+      width: 80%;
+      text-decoration: none;
+      font-size: 1.5rem;
+      background-color: transparent;
+      color: #fff;
+      padding: 14px 20px;
+      border: 1px solid #fff;
+      transition: all 0.3s ease-out;
+
+      &:hover {
+        background: #fff;
+        color: #051937;
+        transition: 250ms;
+      }
+    }
+  }
+
+  .navbar__logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .fa-times {
+    color: #fff;
+    font-size: 2rem;
+  }
+}
